@@ -81,10 +81,9 @@ function check() {
       incorrect++;
       document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
    }
-   if (questionLeft > 1) { //one question already asked by calling randomElement(operator)() at bottom
+   if (--questionLeft > 0) { //one question already asked by calling randomElement(operator)() at bottom
       document.getElementById("notice").innerHTML=`${questionLeft} Question Remaining`
       randomElement(operator)();
-      questionLeft--
    }else{document.getElementById("notice").innerHTML="Well Done ! Refresh page or Modify settings below to continue practicing."}
 }
 
