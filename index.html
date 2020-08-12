@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   
+    <link rel="stylesheet" type="text/css" href="math.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharpen Your Mathematics Skills.</title>
+
+</head>
+
+<body>
+    <section id="main">
+        <p id="notice"></p>
+        <p id="question"></p> <input type="number" onchange="check()" id="userAns"><br>
+        <p id="correct"></p>
+        <p id="incorrect"></p>
+        <p id="skipped"></p>
+        <form name="settings" id="settings">
+    </section><hr>
+    <h1>Settings</h1>
+    <h3>What skills to work on</h3>
+    <label for="add">Addition:</label>
+    <input type="checkbox" name="Addition" id="add" >
+    <label for='sub'> Subtraction:</label>
+    <input type="checkbox" name="Subtraction" id="sub"><br><br>
+    <label for="mul">Multiplication:</label>
+    <input type="checkbox" name="Multiplication" id="mul" checked>
+    <label for="div"> Division:</label>
+    <input type="checkbox" name="Division" id="div"> <br>
+    <hr><br>
+    <h3>Customise Level of question.</h3>
+    <p>Range of 1st number</p>
+    <label for="from1">FROM</label>
+    <input type="number" id="from1" value="10" name="from1 " onchange"console.log(123)">
+    <label for="to1">TO</label>
+    <input type="number" id="to1" value="99"><br>
+    <p>Range of 2nd number</p>
+    <label for="from2">FROM</label>
+    <input type="number" id="from2" value="10">
+    <label for="to2">TO</label>
+    <input type="number" id="to2" value="20">
+    <p>Practice <input type="number" id="NumberOfQuestions" value="5" > Questions in one session.</p>
+    
+    </form><button onclick="formRead()">APPLY</button>
+    <script src="math.js"></script>
+</body>
+
+</html>
