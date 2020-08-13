@@ -15,6 +15,13 @@ var from2
 var to2
 let questionLeft
 let operator
+let correct = 0;
+let incorrect = 0;
+let skipped = 0;
+
+let num1;
+let num2;
+let ans;
 
 function formRead() {
    from1 = +document.forms['settings']['from1'].value;
@@ -24,12 +31,13 @@ function formRead() {
    questionLeft = +document.forms["settings"]["NumberOfQuestions"].value;
    operator = [];
    operatorsSelected();
+   correct=0;incorrect=0;skipped=0;
+   document.getElementById("correct").innerHTML = "correct : " + correct;
+   document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
+   randomElement(operator)()
 }
 formRead()
 
-let num1;
-let num2;
-let ans
 
 function quesmul() {
    num1 = intRange(from1, to1);
@@ -66,9 +74,7 @@ function quesdiv() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
-let correct = 0;
-let incorrect = 0;
-let skipped = 0;
+
 
 function check() {
    let userAns = +document.getElementById("userAns").value
@@ -101,5 +107,3 @@ function operatorsSelected() {
       operator.push(quesdiv)
    };
 }
-
-randomElement(operator)()
