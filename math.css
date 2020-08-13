@@ -3,3 +3,5 @@
 #welcome{font-size: 200%;
 font-family: 'Courier New', Courier, monospace;
 color: green;}
+#correct{color: green;}
+#incorrect{color: red;}
