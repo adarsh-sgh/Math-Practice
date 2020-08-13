@@ -31,7 +31,9 @@ function formRead() {
    questionLeft = +document.forms["settings"]["NumberOfQuestions"].value;
    operator = [];
    operatorsSelected();
-   correct=0;incorrect=0;skipped=0;
+   correct = 0;
+   incorrect = 0;
+   skipped = 0;
    document.getElementById("correct").innerHTML = "correct : " + correct;
    document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
    randomElement(operator)()
@@ -88,9 +90,12 @@ function check() {
       document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
    }
    if (--questionLeft > 0) { //one question already asked by calling randomElement(operator)() at bottom
-      document.getElementById("notice").innerHTML=`${questionLeft} Question Remaining`
+      document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
       randomElement(operator)();
-   }else{document.getElementById("notice").innerHTML="Well Done ! Refresh page or Modify settings below to continue practicing."}
+   } else {
+      document.getElementById("notice").innerHTML = "Well Done ! Refresh page or Modify settings below to continue practicing.";
+      attentionGet("notice",4);
+   }
 }
 
 function operatorsSelected() {
@@ -106,4 +111,13 @@ function operatorsSelected() {
    if (document.getElementById("div").checked) {
       operator.push(quesdiv)
    };
+}
+
+function attentionGet(id,strength=1, color = "Yellow") {
+   
+         document.getElementById(id).style.backgroundColor = color;
+      setTimeout(() => {
+         document.getElementById(id).style.backgroundColor = ""
+
+      }, 500*strength);
 }
