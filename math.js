@@ -8,11 +8,10 @@ let questionLeft
 let operator
 let correct = 0;
 let incorrect = 0;
-let skipped = 0;
-
 let num1;
 let num2;
 let ans;
+let userAns ;
 formRead();
 document.getElementById("userAns").focus()
 
@@ -26,10 +25,10 @@ function formRead() {
    operatorsSelected();
    correct = 0;
    incorrect = 0;
-   skipped = 0;
    document.getElementById("correct").innerHTML = "correct : " + correct;
    document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
-   randomElement(operator)()
+   document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
+showQues()
 }
 
 function quesmul() {
@@ -40,6 +39,7 @@ function quesmul() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
+
 function quesadd() {
    num1 = intRange(from1, to1);
    num2 = intRange(from2, to2);
@@ -48,6 +48,7 @@ function quesadd() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
+
 function quessub() {
    num1 = intRange(from1, to1);
    num2 = intRange(from2, to2);
@@ -56,6 +57,7 @@ function quessub() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = "";
 }
+
 function quesdiv() {
    num1 = intRange(from1, to1);
    num2 = intRange(from2, to2);
@@ -66,23 +68,26 @@ function quesdiv() {
 }
 
 function check() {
-   let userAns = +document.getElementById("userAns").value
+    userAns = +document.getElementById("userAns").value
    if (ans.toPrecision(4) == userAns.toPrecision(4)) {
       correct++;
       document.getElementById("correct").innerHTML = "correct : " + correct;
-   }
-   // else if(userAns==null||userAns==undefined){skipped++}
-   else {
+   } else {
       incorrect++;
       document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
-   }
-   if (--questionLeft > 0) { //one question already asked by calling randomElement(operator)() at bottom
+   };
+   if (--questionLeft > 0) {
       document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
-      randomElement(operator)();
+      showQues()
    } else {
       document.getElementById("notice").innerHTML = "Well Done ! Refresh page or Modify settings below to continue practicing.";
-      attentionGet("notice",4);
+      attentionGet("notice", 4);
    }
+}
+
+function showQues() {
+   if (document.getElementById("real").checked) { quesReal()} 
+   else { randomElement(operator)()} ;
 }
 
 function operatorsSelected() {
@@ -100,19 +105,57 @@ function operatorsSelected() {
    };
 }
 
-function attentionGet(id,strength=1, color = "Yellow") {
-   
-         document.getElementById(id).style.backgroundColor = color;
-      setTimeout(() => {
-         document.getElementById(id).style.backgroundColor = ""
+function attentionGet(id, strength = 1, color = "Yellow") {
 
-      }, 500*strength);
+   document.getElementById(id).style.backgroundColor = color;
+   setTimeout(() => {
+      document.getElementById(id).style.backgroundColor = ""
+
+   }, 500 * strength);
 }
+
 function intRange(a, b) {
    return Math.floor(Math.random() * (b - a)) + a;
-} //random int from a to b-1.
+} //random int from a to b-1
 
 function randomElement(inputArray) {
    let randomIndex = intRange(0, inputArray.length)
    return inputArray[randomIndex]
+}
+
+function quesReal() {
+   if (ans < 500) {
+      mulreal()
+   } else if (ans < 1000) {
+      addreal()
+   } else {
+      subreal()
+   };
+
+   function mulreal() {
+      num1 = userAns||intRange(from1, to1);
+      num2 = intRange(0, 20);
+      ans = (num1) * (num2);
+      let ques = `${num1}&times${num2}`
+      document.getElementById("question").innerHTML = ques;
+      document.getElementById("userAns").value = ""
+   };
+
+   function addreal() {
+      num1 = userAns||intRange(0, 1000);
+      num2 = intRange(from2, to2);
+      ans = (num1) + (num2);
+      let ques = `${num1}+${num2}`
+      document.getElementById("question").innerHTML = ques;
+      document.getElementById("userAns").value = ""
+   }
+
+   function subreal() {
+      num1 =userAns||intRange(from1, to1);
+      num2 = intRange(0, 1000);
+      ans = (num1) - (num2);
+      let ques = `${num1}-${num2}`
+      document.getElementById("question").innerHTML = ques;
+      document.getElementById("userAns").value = "";
+   }
 }
