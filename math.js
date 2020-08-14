@@ -11,7 +11,7 @@ let incorrect = 0;
 let num1;
 let num2;
 let ans;
-let userAns ;
+let userAns;
 formRead();
 document.getElementById("userAns").focus()
 
@@ -28,7 +28,7 @@ function formRead() {
    document.getElementById("correct").innerHTML = "correct : " + correct;
    document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
    document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
-showQues()
+   showQues()
 }
 
 function quesmul() {
@@ -68,7 +68,7 @@ function quesdiv() {
 }
 
 function check() {
-    userAns = +document.getElementById("userAns").value
+   userAns = +document.getElementById("userAns").value
    if (ans.toPrecision(4) == userAns.toPrecision(4)) {
       correct++;
       document.getElementById("correct").innerHTML = "correct : " + correct;
@@ -86,8 +86,11 @@ function check() {
 }
 
 function showQues() {
-   if (document.getElementById("real").checked) { quesReal()} 
-   else { randomElement(operator)()} ;
+   if (document.getElementById("real").checked) {
+      quesReal()
+   } else {
+      randomElement(operator)()
+   };
 }
 
 function operatorsSelected() {
@@ -133,7 +136,7 @@ function quesReal() {
    };
 
    function mulreal() {
-      num1 = userAns||intRange(from1, to1);
+      num1 = userAns || intRange(from1, to1);
       num2 = intRange(0, 20);
       ans = (num1) * (num2);
       let ques = `${num1}&times${num2}`
@@ -142,7 +145,7 @@ function quesReal() {
    };
 
    function addreal() {
-      num1 = userAns||intRange(0, 1000);
+      num1 = userAns || intRange(0, 1000);
       num2 = intRange(from2, to2);
       ans = (num1) + (num2);
       let ques = `${num1}+${num2}`
@@ -151,7 +154,7 @@ function quesReal() {
    }
 
    function subreal() {
-      num1 =userAns||intRange(from1, to1);
+      num1 = userAns || intRange(from1, to1);
       num2 = intRange(0, 1000);
       ans = (num1) - (num2);
       let ques = `${num1}-${num2}`

@@ -1,8 +1,24 @@
-#question{font-size: 250%;color: #04ff00;}
-.footer{ padding-right: 2%;font-size: smaller;background-color:#f4c33098;}
-#welcome{font-size: 200%;
-font-family: 'Courier New', Courier, monospace;
-color: rgb(250, 104, 7);
+#question {
+    font-size: 250%;
+    color: #04ff00;
 }
-#correct{color: green;}
-#incorrect{color: red;}
+
+.footer {
+    padding-right: 2%;
+    font-size: smaller;
+    background-color: #f4c33098;
+}
+
+#welcome {
+    font-size: 200%;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(250, 104, 7);
+}
+
+#correct {
+    color: green;
+}
+
+#incorrect {
+    color: red;
+}

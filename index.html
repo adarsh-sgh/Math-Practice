@@ -17,33 +17,35 @@
         <input type="number" onchange="check()" id="userAns"><br>
         <p id="correct"></p>
         <p id="incorrect"></p>
-        <label for="real">Check this Box to get Questions (+-&times) in a pattern as they often appear in real life.<sup>[Beta]</sup></label>
+        <label for="real">Check this Box to get Questions (+-&times) in a pattern as they often appear in real
+            life.<sup>[Beta]</sup></label>
         <input type="checkbox" name="real" id="real">
     </section>
-    <hr> <form name="settings" id="settings">
-    <h1>Settings</h1>
-    <h3>What skills to work on</h3>
-    <label for="add">Addition:</label>
-    <input type="checkbox" name="Addition" id="add">
-    <label for='sub'> Subtraction:</label>
-    <input type="checkbox" name="Subtraction" id="sub"><br><br>
-    <label for="mul">Multiplication:</label>
-    <input type="checkbox" name="Multiplication" id="mul" checked>
-    <label for="div"> Division:</label>
-    <input type="checkbox" name="Division" id="div"> <br>
-    <hr><br>
-    <h3>Customise Level of question.</h3>
-    <p>Range of 1st number</p>
-    <label for="from1">FROM</label>
-    <input type="number" id="from1" value="10" name="from1 " onchange"console.log(123)">
-    <label for="to1">TO</label>
-    <input type="number" id="to1" value="99"><br>
-    <p>Range of 2nd number</p>
-    <label for="from2">FROM</label>
-    <input type="number" id="from2" value="10">
-    <label for="to2">TO</label>
-    <input type="number" id="to2" value="20">
-    <p>Practice <input type="number" id="NumberOfQuestions" value="5"> Questions in one session.</p>
+    <hr>
+    <form name="settings" id="settings">
+        <h1>Settings</h1>
+        <h3>What skills to work on</h3>
+        <label for="add">Addition:</label>
+        <input type="checkbox" name="Addition" id="add">
+        <label for='sub'> Subtraction:</label>
+        <input type="checkbox" name="Subtraction" id="sub"><br><br>
+        <label for="mul">Multiplication:</label>
+        <input type="checkbox" name="Multiplication" id="mul" checked>
+        <label for="div"> Division:</label>
+        <input type="checkbox" name="Division" id="div"> <br>
+        <hr><br>
+        <h3>Customise Level of question.</h3>
+        <p>Range of 1st number</p>
+        <label for="from1">FROM</label>
+        <input type="number" id="from1" value="10" name="from1 " onchange"console.log(123)">
+        <label for="to1">TO</label>
+        <input type="number" id="to1" value="99"><br>
+        <p>Range of 2nd number</p>
+        <label for="from2">FROM</label>
+        <input type="number" id="from2" value="10">
+        <label for="to2">TO</label>
+        <input type="number" id="to2" value="20">
+        <p>Practice <input type="number" id="NumberOfQuestions" value="5"> Questions in one session.</p>
 
     </form><button onclick="formRead();alert('Form Values Updated')">APPLY</button>
     <script src="math.js"></script>
