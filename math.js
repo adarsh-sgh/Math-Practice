@@ -1,14 +1,5 @@
 "use strict"
 
-function intRange(a, b) {
-   return Math.floor(Math.random() * (b - a)) + a;
-} //random int from a to b-1.
-
-function randomElement(inputArray) {
-   let randomIndex = intRange(0, inputArray.length)
-   return inputArray[randomIndex]
-}
-
 var from1
 var to1
 var from2
@@ -22,6 +13,8 @@ let skipped = 0;
 let num1;
 let num2;
 let ans;
+formRead();
+document.getElementById("userAns").focus()
 
 function formRead() {
    from1 = +document.forms['settings']['from1'].value;
@@ -38,8 +31,6 @@ function formRead() {
    document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
    randomElement(operator)()
 }
-formRead()
-
 
 function quesmul() {
    num1 = intRange(from1, to1);
@@ -49,7 +40,6 @@ function quesmul() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
-
 function quesadd() {
    num1 = intRange(from1, to1);
    num2 = intRange(from2, to2);
@@ -58,7 +48,6 @@ function quesadd() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
-
 function quessub() {
    num1 = intRange(from1, to1);
    num2 = intRange(from2, to2);
@@ -67,7 +56,6 @@ function quessub() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = "";
 }
-
 function quesdiv() {
    num1 = intRange(from1, to1);
    num2 = intRange(from2, to2);
@@ -76,7 +64,6 @@ function quesdiv() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
-
 
 function check() {
    let userAns = +document.getElementById("userAns").value
@@ -120,4 +107,12 @@ function attentionGet(id,strength=1, color = "Yellow") {
          document.getElementById(id).style.backgroundColor = ""
 
       }, 500*strength);
+}
+function intRange(a, b) {
+   return Math.floor(Math.random() * (b - a)) + a;
+} //random int from a to b-1.
+
+function randomElement(inputArray) {
+   let randomIndex = intRange(0, inputArray.length)
+   return inputArray[randomIndex]
 }
