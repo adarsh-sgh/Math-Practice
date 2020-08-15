@@ -10,11 +10,12 @@
 </head>
 
 <body>
-    <h5>Hi , Glad To <span id="welcome">WELCOME</span> You</h5>
+    <h5 id="welcomeParagraph">Hi , Glad To <span id="welcome">WELCOME</span> You</h5>
     <section id="main">
-        <p id="notice"></p>
+        <p id="notice" title="Share your favourite tips/quotes on github or Email Me.(Links at Bottom)"></p>
         <p id="question"></p>
-        <input type="number" onchange="check()" id="userAns"><br>
+        <input type="number" onchange="check()" id="userAns" onclick="hide('welcomeParagraph')">
+        <button onclick="writeOn('notice','you can use keyboard ENTER buttons for submitting answer ')">Enter</button><br>
         <p id="correct"></p>
         <p id="incorrect"></p>
         <label for="real">Check this Box to get Questions (+-&times) in a pattern as they often appear in real
@@ -48,6 +49,7 @@
         <p>Practice <input type="number" id="NumberOfQuestions" value="5"> Questions in one session.</p>
 
     </form><button onclick="formRead();alert('Form Values Updated')">APPLY</button>
+    <script src="tips.js"></script>
     <script src="math.js"></script>
     <br>
     <hr>

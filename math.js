@@ -27,7 +27,7 @@ function formRead() {
    incorrect = 0;
    document.getElementById("correct").innerHTML = "correct : " + correct;
    document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
-   document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
+   document.getElementById("notice").innerHTML = `<q>${randomElement(tips)}</q>`
    showQues()
 }
 
@@ -161,4 +161,8 @@ function quesReal() {
       document.getElementById("question").innerHTML = ques;
       document.getElementById("userAns").value = "";
    }
+}
+function hide(id){document.getElementById(id).style.display="none"}
+function writeOn(id,message){
+   document.getElementById(id).innerHTML=message
 }
