@@ -1,0 +1,32 @@
+{
+    "theme_color": "#fcf8f3",
+    "background_color": "#fcf8f3",
+    "display": "minimal-ui",
+    "scope": "/",
+    "start_url": "/index.html",
+    "app_name": "Math-Practice",
+    "short_name": "math",
+    "description": "Do multiplication addition subtraction or division",
+    "icons": [
+        {
+            "src": "/icon-192x192.png",
+            "sizes": "192x",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-384x384.png",
+            "sizes": "384x",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-512x512.png",
+            "sizes": "512x",
+            "type": "image/png"
+        }
+    ]
+}
