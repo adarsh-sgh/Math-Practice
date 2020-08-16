@@ -4,7 +4,7 @@
     "display": "minimal-ui",
     "scope": "/",
     "start_url": "/Math-Practice/index.html",
-    "app_name": "Math Practice",
+    "name": "Math Practice",
     "short_name": "math",
     "description": "Do multiplication addition subtraction or division",
     "icons": [
