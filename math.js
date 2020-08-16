@@ -164,7 +164,3 @@ function quesReal() {
 }
 function hide(id){document.getElementById(id).style.display="none"}
 function writeOn(id,message){document.getElementById(id).innerHTML=message}
-
-if('serviceWorker' in navigator) {
-   navigator.serviceWorker.register('./sw.js');
-} else{console.log("service worker not in inavigator(not supported)")};
