@@ -15,8 +15,8 @@
     <section id="main">
         <p id="notice" title="Share your favourite tips/quotes on github or Email Me.(Links at Bottom)"></p>
         <p id="question"></p>
-        <input type="number" onchange="check()" id="userAns" onclick="hide('welcomeParagraph')">
-        <button onclick="writeOn('notice','you can use keyboard ENTER buttons for submitting answer ')">Enter</button><br>
+        <input type="number" onchange="check()" id="userAns" onclick="writeOn('welcomeParagraph','')">
+        <button onclick="writeOn('welcomeParagraph','It is best to use  ENTER button on your keyboard  for submitting answer ')">Enter</button><br>
         <p id="correct"></p>
         <p id="incorrect"></p>
         <label for="real">Check this Box to get Questions (+-&times) in a pattern as they often appear in real
@@ -47,7 +47,7 @@
         <input type="number" id="from2" value="10">
         <label for="to2">TO</label>
         <input type="number" id="to2" value="20">
-        <p>Practice <input type="number" id="NumberOfQuestions" value="5"> Questions in one session.</p>
+        <p>Practice <input type="number" id="NumberOfQuestions" value="10"> Questions in one session.</p>
 
     </form><button onclick="formRead();alert('Form Values Updated')">APPLY</button>
     <script src="tips.js"></script>

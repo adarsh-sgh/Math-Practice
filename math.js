@@ -77,7 +77,7 @@ function check() {
       document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
    };
    if (--questionLeft > 0) {
-      document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
+      document.getElementById("notice").innerHTML= `${questionLeft} Question Remaining`
       showQues()
    } else {
       document.getElementById("notice").innerHTML = "Well Done ! Refresh page or Modify settings below to continue practicing.";
