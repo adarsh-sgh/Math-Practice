@@ -164,3 +164,15 @@ function quesReal() {
 }
 function hide(id){document.getElementById(id).style.display="none"}
 function writeOn(id,message){document.getElementById(id).innerHTML=message}
+
+if ('serviceWorker' in navigator) {
+   window.addEventListener('load', function() {
+     navigator.serviceWorker.register('/Math-Practice/sw.js').then(function(registration) {
+       // Registration was successful
+       console.log('ServiceWorker registration successful with scope: ', registration.scope);
+     }, function(err) {
+       // registration failed :(
+       console.log('ServiceWorker registration failed: ', err);
+     });
+   });
+ }
