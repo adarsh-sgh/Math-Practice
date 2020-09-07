@@ -1,4 +1,4 @@
-const cacheName = 'v1';
+const cacheName = 'mathv1';
 
 const cacheAssets = [
   'index.html','math.js','math.css'
