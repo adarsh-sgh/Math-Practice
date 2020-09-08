@@ -27,7 +27,7 @@ function formRead() {
    incorrect = 0;
    document.getElementById("correct").innerHTML = "correct : " + correct;
    document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
-   document.getElementById("notice").innerHTML = `<q>${randomElement(tips)}</q>`
+   
    showQues()
 }
 
@@ -66,7 +66,7 @@ function quesdiv() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
-
+function autoEnter(){if(Math.abs(+document.getElementById("userAns").value-ans)<.01){check()}}//auto enters the answer if it's corrrect
 function check() {
    userAns = +document.getElementById("userAns").value
    if (ans.toPrecision(4) == userAns.toPrecision(4)) {
@@ -100,11 +100,11 @@ function operatorsSelected() {
    if (document.getElementById("sub").checked) {
       operator.push(quessub)
    };
-   if (document.getElementById("mul").checked) {
-      operator.push(quesmul)
-   };
    if (document.getElementById("div").checked) {
       operator.push(quesdiv)
+   };
+   if (document.getElementById("mul").checked||operator.length==0) {//if no operator is selected push mul.
+      operator.push(quesmul)
    };
 }
 

@@ -15,7 +15,7 @@
     <section id="main">
         <p id="notice" title="Share your favourite tips/quotes on github or Email Me.(Links at Bottom)"></p>
         <p id="question"></p>
-        <input type="number" onchange="check()" id="userAns" onclick="writeOn('welcomeParagraph','')">
+        <input type="number" onchange="check()" id="userAns" onclick="hide('welcomeParagraph','')" oninput="autoEnter()">
         <button onclick="writeOn('welcomeParagraph','It is best to use  ENTER button on your keyboard  for submitting answer ')">Enter</button><br>
         <p id="correct"></p>
         <p id="incorrect"></p>
@@ -23,19 +23,19 @@
             life.<sup>[Beta]</sup></label>
         <input type="checkbox" name="real" id="real">
     </section>
-    <hr>
+    <hr style="height:4px;border-width:0;color:gray;background-color:gray">
     <form name="settings" id="settings">
         <h1>Settings</h1>
         <h3>What skills to work on</h3>
         <label for="add">Addition:</label>
-        <input type="checkbox" name="Addition" id="add">
+        <input type="checkbox" name="Addition" id="add" onchange="formRead()">
         <label for='sub'> Subtraction:</label>
-        <input type="checkbox" name="Subtraction" id="sub"><br><br>
+        <input type="checkbox" name="Subtraction" id="sub" onchange="formRead()"><br><br>
         <label for="mul">Multiplication:</label>
-        <input type="checkbox" name="Multiplication" id="mul" checked>
+        <input type="checkbox" name="Multiplication" id="mul" checked onchange="formRead()">
         <label for="div"> Division:</label>
         <input type="checkbox" name="Division" id="div"> <br>
-        <hr><br>
+    <hr>
         <h3>Customise Level of question.</h3>
         <p>Range of 1st number</p>
         <label for="from1">FROM</label>
@@ -50,8 +50,8 @@
         <p>Practice <input type="number" id="NumberOfQuestions" value="10"> Questions in one session.</p>
 
     </form><button onclick="formRead();alert('Form Values Updated')">APPLY</button>
-    <script src="tips.js"></script>
     <script src="math.js"></script>
+    <script src="tips.js"></script>
     <br>
     <hr>
     <div>
