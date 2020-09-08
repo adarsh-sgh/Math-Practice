@@ -11,4 +11,5 @@ let tips=[
 "Math Wisdom: The only way to learn Mathematics is to do Mathematics.",
 "Math Wisdom: If you can not identify any opportunity to apply mathematics in your real life you wasted your time by trying to learn this subject.",
 "Math Wisdom: Practice makes a math perfect. ",
-]
+];
+document.getElementById("notice").innerHTML = `<q>${randomElement(tips)}</q>`
