@@ -1,7 +1,7 @@
-const cacheName = 'mathv1';
+const cacheName = 'mathv1.0';
 
 const cacheAssets = [
-  'index.html','math.js','math.css'
+  '/Math-Practice/index.html','/Math-Practice/math.js','/Math-Practice/math.css'
 ];
 
 // Call Install Event

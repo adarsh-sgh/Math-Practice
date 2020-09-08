@@ -36,8 +36,8 @@
         <label for="div"> Division:</label>
         <input type="checkbox" name="Division" id="div"> <br>
     <hr>
-        <h3>Customise Level of question.</h3>
-        <p>Range of 1st number</p>
+        <button type="button" id="level" onclick="toggleVisibility('levelSet')" >Customise Level of question . </button>
+    <div id="levelSet" style="display: none;"><p>Range of 1st number</p>
         <label for="from1">FROM</label>
         <input type="number" id="from1" value="10" name="from1 ">
         <label for="to1">TO</label>
@@ -50,6 +50,7 @@
         <p>Practice <input type="number" id="NumberOfQuestions" value="10"> Questions in one session.</p>
 
     </form><button onclick="formRead();alert('Form Values Updated')">APPLY</button>
+</div>
     <script src="math.js"></script>
     <script src="tips.js"></script>
     <br>

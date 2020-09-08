@@ -162,7 +162,11 @@ function quesReal() {
       document.getElementById("userAns").value = "";
    }
 }
-function hide(id){document.getElementById(id).style.display="none"}
+function hide(id){document.getElementById(id).style.display="none"};
+function show(id){document.getElementById(id).style.display="block"};
+function toggleVisibility(id){
+   if(document.getElementById(id).style.display=="none"){show(id)} else hide(id) 
+}
 function writeOn(id,message){document.getElementById(id).innerHTML=message}
 
 if ('serviceWorker' in navigator) {

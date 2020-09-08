@@ -30,3 +30,17 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
   }
+  #level {
+    background-color: #a39e8edc;
+    border: none;
+    color: yellow;
+    letter-spacing: 1.5px;
+    padding: 9px 32px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+ 
