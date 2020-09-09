@@ -162,12 +162,18 @@ function quesReal() {
       document.getElementById("userAns").value = "";
    }
 }
+function dropdownState(idToggled,idButton){
+   if(document.getElementById(idToggled).style.display=="none"){writeOn(idButton,'▼')}
+   else{writeOn(idButton,'▲')}
+}
 function hide(id){document.getElementById(id).style.display="none"};
 function show(id){document.getElementById(id).style.display="block"};
 function toggleVisibility(id){
    if(document.getElementById(id).style.display=="none"){show(id)} else hide(id) 
 }
 function writeOn(id,message){document.getElementById(id).innerHTML=message}
+
+function toggleLevel(){ toggleVisibility('levelSet');dropdownState('levelSet','levelDropdownSymbol')}
 
 if ('serviceWorker' in navigator) {
    window.addEventListener('load', function() {
