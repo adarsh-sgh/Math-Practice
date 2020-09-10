@@ -9,7 +9,7 @@
     background-color: #f4c33098; 
 }
 
-#welcome {
+.a {
     font-size: 200%;
     font-family: 'Courier New', Courier, monospace;
     color: rgb(250, 104, 7);
@@ -30,6 +30,7 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
   }
+  /* above block hides arrows of input field & was copied as is from net */
   #level {
     background-color: #a39e8edc;
     border: none;
@@ -43,4 +44,3 @@ input[type=number] {
     margin: 4px 2px;
     cursor: pointer;
   }
- 
