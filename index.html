@@ -12,12 +12,12 @@
 </head>
 
 <body><button class="add-button">Add to home screen </button>
-    <h5 id="welcomeParagraph"> <span id="welcome" class="a">WELCOME</span> To <span class="a">"Math Practice" </span></h5>
+    <h5 id="welcome" class="heading"> <span class="hidden">WELCOME To</span> "Math Practice" </h5>
     <section id="main">
         <p id="notice" title="Share your favourite tips/quotes on github or Email Me.(Links at Bottom)"></p>
         <p id="question"></p>
-        <input type="number" onchange="check()" id="userAns" onclick="hide('welcomeParagraph','')" oninput="autoEnter()">
-        <button onclick="writeOn('welcomeParagraph','It is best to use  ENTER button on your keyboard  for submitting answer ')">Enter</button><br>
+        <input type="number" onchange="check()" id="userAns" onclick="hide('welcome','')" oninput="autoEnter()">
+        <button onclick="writeOn('welcome','It is best to use  ENTER button on your keyboard  for submitting answer ')">Enter</button><br>
         <p id="correct"></p>
         <p id="incorrect"></p>
         <label for="real">Check this Box to get Questions (+-&times) in a pattern as they often appear in real
@@ -51,12 +51,11 @@
         <p>Practice <input type="number" id="NumberOfQuestions" value="10"> Questions in one session.</p>
 
     </form><button onclick="formRead();alert('Form Values Updated')">APPLY</button>
+    <hr>
 </div>
     <script src="math.js"></script>
     <script src="tips.js"></script>
-    <br>
-    <hr>
-    <div>
+    <div id="footer">
         <a href="https://github.com/lkiThakur/Math-Practice/archive/master.zip" class="footer"
             title="download zip for offline usage or Anything">Download code.</a>
         <a href="https://github.com/lkiThakur/Math-Practice/" class="footer">View on github.</a>
