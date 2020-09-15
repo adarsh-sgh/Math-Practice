@@ -1,54 +1,63 @@
 #question {
-    font-size: 250%;
-    color: #04ff00;
+  font-size: 250%;
+  color: #04ff00;
 }
 
 .footer {
-    padding-right: 2%;
-    font-size: smaller;
-    background-color: #f4c33098; 
+  padding-right: 2%;
+  font-size: smaller;
+  background-color: #f4c33098;
 }
-#footer{
-    margin-top: 9px;
+
+#footer {
+  margin-top: 9px;
 }
+
 .heading {
-    font-size: 200%;
-    font-family: 'Courier New', Courier, monospace;
-    color: rgb(250, 104, 7);
+  font-size: 200%;
+  font-family: 'Courier New', Courier, monospace;
+  color: rgb(250, 104, 7);
 }
 
 #correct {
-    color: green;
+  color: green;
 }
 
 #incorrect {
-    color: red;
+  color: red;
 }
+
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
 input[type=number] {
-    -moz-appearance: textfield;
-  }
-  /* above block hides arrows of input field & was copied as is from net */
-  #level {
-    background-color: #a39e8edc;
-    border: none;
-    color: yellow;
-    letter-spacing: 1.5px;
-    padding: 9px 32px;
-    text-align: left;
-    text-decoration: none;
+  -moz-appearance: textfield;
+}
+
+/* above block hides arrows of input field & was copied as is from net */
+#level {
+  background-color: #a39e8edc;
+  border: none;
+  color: yellow;
+  letter-spacing: 1.5px;
+  padding: 9px 32px;
+  text-align: left;
+  text-decoration: none;
+  display: inline;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+@media screen and (min-width: 530px) {
+  .hidden {
     display: inline;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
   }
-  .hidden {display: none;}
-  @media screen and (min-width: 530px) {
-    .hidden {
-      display: inline;
-    }
-  }
+}

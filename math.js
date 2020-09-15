@@ -27,7 +27,7 @@ function formRead() {
    incorrect = 0;
    document.getElementById("correct").innerHTML = "correct : " + correct;
    document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
-   
+
    showQues()
 }
 
@@ -66,10 +66,15 @@ function quesdiv() {
    document.getElementById("question").innerHTML = ques;
    document.getElementById("userAns").value = ""
 }
-function autoEnter(){if(Math.abs(+document.getElementById("userAns").value-ans)<.01){check()}}//auto enters the answer if it's corrrect
+
+function autoEnter() {
+   if (Math.abs(+document.getElementById("userAns").value - ans) < .01) {
+      check()
+   }
+} //auto enters the answer if it's corrrect
 function check() {
    userAns = +document.getElementById("userAns").value
-   if (ans.toPrecision(4) == userAns.toPrecision(4)) {
+   if (Math.abs(ans - userAns) < .01) {
       correct++;
       document.getElementById("correct").innerHTML = "correct : " + correct;
    } else {
@@ -77,7 +82,7 @@ function check() {
       document.getElementById("incorrect").innerHTML = "incorrect : " + incorrect
    };
    if (--questionLeft > 0) {
-      document.getElementById("notice").innerHTML= `${questionLeft} Question Remaining`
+      document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
       showQues()
    } else {
       document.getElementById("notice").innerHTML = "Well Done ! Refresh page or Modify settings below to continue practicing.";
@@ -103,7 +108,7 @@ function operatorsSelected() {
    if (document.getElementById("div").checked) {
       operator.push(quesdiv)
    };
-   if (document.getElementById("mul").checked||operator.length==0) {//if no operator is selected push mul.
+   if (document.getElementById("mul").checked || operator.length == 0) { //if no operator is selected push mul.
       operator.push(quesmul)
    };
 }
@@ -162,32 +167,51 @@ function quesReal() {
       document.getElementById("userAns").value = "";
    }
 }
-function dropdownState(idToggled,idButton){
-   if(document.getElementById(idToggled).style.display=="none"){writeOn(idButton,'▼')}
-   else{writeOn(idButton,'▲')}
-}
-function hide(id){document.getElementById(id).style.display="none"};
-function show(id){document.getElementById(id).style.display="block"};
-function toggleVisibility(id){
-   if(document.getElementById(id).style.display=="none"){show(id)} else hide(id) 
-}
-function writeOn(id,message){document.getElementById(id).innerHTML=message}
 
-function toggleLevel(){ toggleVisibility('levelSet');dropdownState('levelSet','levelDropdownSymbol')}
+function dropdownState(idToggled, idButton) {
+   if (document.getElementById(idToggled).style.display == "none") {
+      writeOn(idButton, '▼')
+   } else {
+      writeOn(idButton, '▲')
+   }
+}
+
+function hide(id) {
+   document.getElementById(id).style.display = "none"
+};
+
+function show(id) {
+   document.getElementById(id).style.display = "block"
+};
+
+function toggleVisibility(id) {
+   if (document.getElementById(id).style.display == "none") {
+      show(id)
+   } else hide(id)
+}
+
+function writeOn(id, message) {
+   document.getElementById(id).innerHTML = message
+}
+
+function toggleLevel() {
+   toggleVisibility('levelSet');
+   dropdownState('levelSet', 'levelDropdownSymbol')
+}
 
 if ('serviceWorker' in navigator) {
-   window.addEventListener('load', function() {
-     navigator.serviceWorker.register('/Math-Practice/sw.js').then(function(registration) {
-       // Registration was successful
-       console.log('ServiceWorker registration successful with scope: ', registration.scope);
-     }, function(err) {
-       // registration failed :(
-       console.log('ServiceWorker registration failed: ', err);
-     });
+   window.addEventListener('load', function () {
+      navigator.serviceWorker.register('/Math-Practice/sw.js').then(function (registration) {
+         // Registration was successful
+         console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      }, function (err) {
+         // registration failed :(
+         console.log('ServiceWorker registration failed: ', err);
+      });
    });
- }
+}
 
- let deferredPrompt;
+let deferredPrompt;
 const addBtn = document.querySelector('.add-button');
 addBtn.style.display = 'none';
 window.addEventListener('beforeinstallprompt', (e) => {
@@ -197,20 +221,20 @@ window.addEventListener('beforeinstallprompt', (e) => {
    deferredPrompt = e;
    // Update UI to notify the user they can add to home screen
    addBtn.style.display = 'block';
- 
+
    addBtn.addEventListener('click', (e) => {
-     // hide our user interface that shows our A2HS button
-     addBtn.style.display = 'none';
-     // Show the prompt
-     deferredPrompt.prompt();
-     // Wait for the user to respond to the prompt
-     deferredPrompt.userChoice.then((choiceResult) => {
+      // hide our user interface that shows our A2HS button
+      addBtn.style.display = 'none';
+      // Show the prompt
+      deferredPrompt.prompt();
+      // Wait for the user to respond to the prompt
+      deferredPrompt.userChoice.then((choiceResult) => {
          if (choiceResult.outcome === 'accepted') {
-           console.log('User accepted the A2HS prompt');
+            console.log('User accepted the A2HS prompt');
          } else {
-           console.log('User dismissed the A2HS prompt');
+            console.log('User dismissed the A2HS prompt');
          }
          deferredPrompt = null;
-       });
+      });
    });
- });
+});

@@ -7,6 +7,8 @@
     <link rel="manifest" href="manifest.webmanifest">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" content="ogimage.png">
+    <meta name="description" content="Enhance Your Calculation Skills Through Practice.Easily customisable basic Math questions">
+
     <meta name="google-site-verification" content="VmwAIS1gsEALgtnEz8wofCP06G9WBK3zGI--gduuSns" />
     <title>Sharpen Your Mathematics Skills.</title>
 </head>
@@ -16,7 +18,7 @@
     <section id="main">
         <p id="notice" title="Share your favourite tips/quotes on github or Email Me.(Links at Bottom)"></p>
         <p id="question"></p>
-        <input type="number" onchange="check()" id="userAns" onclick="hide('welcome','')" oninput="autoEnter()">
+        <input type="number" id="userAns" onchange="check()" onclick="writeOn('welcome','')" oninput="autoEnter()">
         <button onclick="writeOn('welcome','It is best to use  ENTER button on your keyboard  for submitting answer ')">Enter</button><br>
         <p id="correct"></p>
         <p id="incorrect"></p>
