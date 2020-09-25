@@ -16,5 +16,7 @@ let help=[
     "USAGE TIPS: A right answer will be submitted automaticaly when typed.",
     "Contact info of developer and link to the Code is present at the bottom of page.",
 "Option to skip a question is intetionally not provided",
+"You can set hardness level of questions from below", 
 ]
-document.getElementById("notice").innerHTML = `<q>${randomElement(tips.concat(help))}</q>`
+// document.getElementById("notice").innerHTML = `<q>${randomElement(tips.concat(help))}</q>`
+document.getElementById("notice").innerHTML = `<q>${randomElement(help)}</q>`
