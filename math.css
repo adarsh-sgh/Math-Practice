@@ -1,8 +1,11 @@
 #question {
   font-size: 250%;
   color: #04ff00;
+  display: inline;
 }
-
+#timer{
+  margin-left: 20px;
+}
 .footer {
   padding-right: 2%;
   font-size: smaller;

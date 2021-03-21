@@ -12,6 +12,7 @@ let num1;
 let num2;
 let ans;
 let userAns;
+let intervalId;
 formRead();
 document.getElementById("userAns").focus()
 
@@ -73,6 +74,19 @@ function autoEnter() {
    }
 } //auto enters the answer if it's corrrect
 function check() {
+   if(correct==0&&incorrect==0){
+      let timeElapsed=0
+      let interval=1;//in seconds
+      timerStart();
+      function timerStart() {
+         intervalId= setInterval(() => {
+            timeElapsed+=interval;
+            let min=Math.floor(timeElapsed/60);
+            let sec=timeElapsed%60;
+            document.getElementById("timer").innerHTML=`${min} : ${sec}`
+         }, 1000*interval);
+      }
+   }
    userAns = +document.getElementById("userAns").value
    if (Math.abs(ans - userAns) < .01) {
       correct++;
@@ -85,6 +99,7 @@ function check() {
       document.getElementById("notice").innerHTML = `${questionLeft} Question Remaining`
       showQues()
    } else {
+      clearInterval(intervalId);
       document.getElementById("notice").innerHTML = "Well Done ! Refresh page or Modify settings below to continue practicing.";
       attentionGet("notice", 4);
    }
