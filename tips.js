@@ -1,3 +1,4 @@
+//This file is used to show random tips to users; 
 let tips=[
     "Math Tricks: Giant round offs- after calculating your answer use heavy round off to know if you are any close e.g. were you expecting a 3-4 digit answer.",
 "Math Tricks: In addition subtraction and multiplication know the last digit just by doing respective operation on last digit of given numbers",
