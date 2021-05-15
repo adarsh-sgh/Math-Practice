@@ -1,0 +1,30 @@
+{
+  "name": "math-practice",
+  "version": "0.0.1",
+  "description": "webapp to compete in mathematics",
+  "main": "math.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lkiThakur/Math-Practice.git"
+  },
+  "keywords": [
+    "math",
+    "maths",
+    "practice",
+    "mathematics"
+  ],
+  "author": "Adarsh Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lkiThakur/Math-Practice/issues"
+  },
+  "homepage": "https://github.com/lkiThakur/Math-Practice#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socketio": "^1.0.0"
+  }
+}
