@@ -1,5 +1,7 @@
 "use strict"
 
+const socket=io();
+
 var from1
 var to1
 var from2
