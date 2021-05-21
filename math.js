@@ -2,6 +2,7 @@
 
 const socket=io();
 socket.on("userJoined",(id)=>console.log("user joined same room with id :"+id))
+socket.on('scoreUpdateToClient',(id,scr)=>console.log(id,scr))
 var from1
 var to1
 var from2
@@ -75,9 +76,11 @@ function autoEnter() {
       check()
    }
 } //auto enters the answer if it's corrrect
+
+let timeElapsed=0
 function check() {
    if(correct==0&&incorrect==0){
-      let timeElapsed=0
+      
       let interval=1;//in seconds
       timerStart();
       function timerStart() {
@@ -105,6 +108,8 @@ function check() {
       document.getElementById("notice").innerHTML = "Well Done ! Refresh page or Modify settings below to continue practicing.";
       attentionGet("notice", 4);
    }
+   let score=(correct-incorrect/4)/timeElapsed;
+   socket.emit('scoreUpdate',score)
 }
 
 function showQues() {

@@ -10,8 +10,16 @@ const io = socketio(server);
 let roomAcceptingEntry = false;
 const playerLimit = 5;
 app.use(express.static(__dirname));
+
 io.on('connection', socket => {
     console.log('a user connected with id = ' + socket.id)
+
+    socket.on("scoreUpdate", score => socket.broadcast
+        .to(roomOf(socket))
+        .emit(
+            'scoreUpdateToClient', socket.id,score
+        ))
+
     addToRandomRoom()
     async function addToRandomRoom() {
 
@@ -25,6 +33,7 @@ io.on('connection', socket => {
             }
             socket.broadcast.to(roomOf(socket)).emit('userJoined', socket.id)
         }).catch(e => console.log(e))
+        
     }
 })
 
@@ -34,7 +43,7 @@ server.listen(PORT, () => { console.log(`Server running on port ${PORT}`) })
 
 function roomOf(socket) {
     let roomArray = Array.from(socket.rooms);
-    //we assume array has joined 2 rooms only ;one it's default room (id) and other in which game gonna happen
+    //we assume socket has joined 2 rooms only ;one it's default room (id) and other in which game gonna happen
     return roomArray[0] = socket.id ? roomArray[1] : roomArray[0];
 }
 async function usersInRoom(room) {
