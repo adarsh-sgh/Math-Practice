@@ -108,7 +108,9 @@ function check() {
       document.getElementById("notice").innerHTML = "Well Done ! Refresh page or Modify settings below to continue practicing.";
       attentionGet("notice", 4);
    }
-   let score=(correct-incorrect/4)/timeElapsed;
+   // let score=timeElapsed?(correct-incorrect/4)/timeElapsed:0;
+   score=correct;
+   console.log(score)
    socket.emit('scoreUpdate',score)
 }
 
